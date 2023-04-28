@@ -1,4 +1,4 @@
-package com.example.szkolenietechniczne1projekt;
+package com.example.szkolenietechniczne1projekt.models;
 
 
 import javax.persistence.*;
@@ -13,6 +13,19 @@ public class User {
     private Long id;
     private String username;
     private String password;
+
+/*    @ManyToOne
+    @JoinColumn(name = "trainer_id")
+    private Trainer trainer;
+
+    @ManyToOne
+    @JoinColumn(name = "hall_id")
+    private Hall hall;*/
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public User() {
     }
@@ -39,5 +52,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

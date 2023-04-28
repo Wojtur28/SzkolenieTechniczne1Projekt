@@ -9,4 +9,10 @@ module com.example.szkolenietechniczne1projekt {
 
     opens com.example.szkolenietechniczne1projekt to javafx.fxml, org.hibernate.orm.core;
     exports com.example.szkolenietechniczne1projekt;
+    exports com.example.szkolenietechniczne1projekt.models;
+    opens com.example.szkolenietechniczne1projekt.models to javafx.fxml, org.hibernate.orm.core;
+    exports com.example.szkolenietechniczne1projekt.services;
+    opens com.example.szkolenietechniczne1projekt.services to javafx.fxml, org.hibernate.orm.core;
+    exports com.example.szkolenietechniczne1projekt.controllers;
+    opens com.example.szkolenietechniczne1projekt.controllers to javafx.fxml, org.hibernate.orm.core;
 }

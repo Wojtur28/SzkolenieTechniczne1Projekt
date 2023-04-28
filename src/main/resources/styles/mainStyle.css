@@ -1,0 +1,19 @@
+.color1 {color: #17292d;}
+.color2 {color: #213e48;}
+.color3 {color: #386467;}
+.color4 {color: #549491;}
+.color5 {color: #7dcbc5;}
+
+
+.button {
+    -fx-background-color: #2397ad;
+    -fx-background-radius: 10;
+}
+
+.button:hover {
+    -fx-background-color: #549491;
+}
+
+#mainAnchor{
+    -fx-background-color: #17292d;
+}

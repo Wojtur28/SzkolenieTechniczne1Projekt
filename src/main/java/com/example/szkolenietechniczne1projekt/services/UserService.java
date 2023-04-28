@@ -1,4 +1,6 @@
-package com.example.szkolenietechniczne1projekt;
+package com.example.szkolenietechniczne1projekt.services;
+
+import com.example.szkolenietechniczne1projekt.models.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,11 +18,13 @@ public class UserService {
         return users;
     }
 
-    public void addUser(User user) {
+    public boolean addUser(User user) {
         EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
         em.getTransaction().begin();
         em.persist(user);
         em.getTransaction().commit();
         em.close();
+        System.out.println("User added");
+        return true;
     }
 }
