@@ -1,5 +1,6 @@
 package com.example.szkolenietechniczne1projekt.controllers;
 
+import com.example.szkolenietechniczne1projekt.controllers.sceneController.SceneController;
 import com.example.szkolenietechniczne1projekt.models.User;
 import com.example.szkolenietechniczne1projekt.services.UserService;
 import javafx.collections.FXCollections;
@@ -12,19 +13,19 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class UserController implements Initializable {
+public class UserController extends SceneController implements Initializable{
 
     @FXML
     private TableView<User> userTable;
 
     UserService userService;
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         userService = new UserService();
         List<User> users = userService.getAllUsers();
         ObservableList<User> observableList = FXCollections.observableArrayList(users);
         userTable.setItems(observableList);
     }
+
+
 }
