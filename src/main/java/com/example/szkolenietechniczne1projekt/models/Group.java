@@ -14,20 +14,20 @@ public class Group {
     @Column(name = "difficulty")
     @Enumerated(EnumType.STRING)
     private Difficulty difficulty;
-    @Column(name = "type_training")
-    private TypeTraining typeTraining;
+    @Column(name = "hall_id")
+    private Long hallId;
     @Column(name = "trainer_id")
     private Long trainerId;
 
-    public Group(Long id, String name, Difficulty difficulty, TypeTraining typeTraining, Long trainerId) {
+    public Group() {
+    }
+
+    public Group(Long id, String name, Difficulty difficulty, Long hallId, Long trainerId) {
         this.id = id;
         this.name = name;
         this.difficulty = difficulty;
-        this.typeTraining = typeTraining;
+        this.hallId = hallId;
         this.trainerId = trainerId;
-    }
-
-    public Group() {
     }
 
     public Long getId() {
@@ -54,12 +54,12 @@ public class Group {
         this.difficulty = difficulty;
     }
 
-    public TypeTraining getTypeTraining() {
-        return typeTraining;
+    public Long getHallId() {
+        return hallId;
     }
 
-    public void setTypeTraining(TypeTraining typeTraining) {
-        this.typeTraining = typeTraining;
+    public void setHallId(Long hallId) {
+        this.hallId = hallId;
     }
 
     public Long getTrainerId() {
@@ -76,7 +76,7 @@ public class Group {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", difficulty=" + difficulty +
-                ", typeTraining=" + typeTraining +
+                ", hallId=" + hallId +
                 ", trainerId=" + trainerId +
                 '}';
     }
