@@ -12,29 +12,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="852.0" stylesheets="@../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.HallController">
-    <TableView fx:id="hallTable" layoutX="169.0" layoutY="82.0" prefHeight="400.0" prefWidth="389.0">
+<AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="852.0" stylesheets="@../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.MachineController">
+    <TableView fx:id="machineTable" layoutX="169.0" layoutY="82.0" prefHeight="400.0" prefWidth="389.0">
         <columns>
             <TableColumn prefWidth="31.0" text="id">
                 <cellValueFactory>
                     <PropertyValueFactory property="id" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="100.0" text="name">
+            <TableColumn prefWidth="84.0" text="name">
                 <cellValueFactory>
                     <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="100.0" text="size">
+            <TableColumn prefWidth="91.0" text="condition">
                 <cellValueFactory>
-                    <PropertyValueFactory property="size" />
+                    <PropertyValueFactory property="condition" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="157.0" text="is_cleaned">
+            <TableColumn prefWidth="104.0" text="quantity">
                 <cellValueFactory>
-                    <PropertyValueFactory property="isCleaned" />
+                    <PropertyValueFactory property="quantity" />
                 </cellValueFactory>
             </TableColumn>
+         <TableColumn prefWidth="78.0" text="hall_id" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="hallId" />
+                </cellValueFactory>
+         </TableColumn>
         </columns>
     </TableView>
     <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="100.0">
@@ -92,7 +97,7 @@
             <Insets top="10.0" />
         </padding>
     </VBox>
-    <Label alignment="CENTER" layoutX="169.0" layoutY="14.0" prefHeight="50.0" prefWidth="352.0" text="Hale" textAlignment="CENTER" textFill="WHITE">
+    <Label alignment="CENTER" layoutX="169.0" layoutY="14.0" prefHeight="50.0" prefWidth="352.0" text="Maszyny" textAlignment="CENTER" textFill="WHITE">
         <font>
             <Font name="Roboto Regular" size="43.0" />
         </font>
