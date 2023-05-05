@@ -58,14 +58,5 @@ public class Hall {
         isCleaned = cleaned;
     }
 
-    @Override
-    public String toString() {
-        return "Hall{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", size=" + size +
-                ", isCleaned=" + isCleaned +
-                '}';
-    }
 }
 

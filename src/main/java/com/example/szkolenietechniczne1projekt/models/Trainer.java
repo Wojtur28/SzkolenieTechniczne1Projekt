@@ -70,14 +70,4 @@ public class Trainer {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Trainer{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
-    }
 }

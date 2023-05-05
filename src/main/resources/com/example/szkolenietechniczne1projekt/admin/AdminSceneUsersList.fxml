@@ -35,16 +35,21 @@
                    <PropertyValueFactory property="hallId" />
                 </cellValueFactory>
             </TableColumn>
-         <TableColumn editable="false" prefWidth="84.0" text="group_id">
+         <TableColumn editable="false" prefWidth="60.0" text="group_id">
                 <cellValueFactory>
                    <PropertyValueFactory property="groupId" />
                 </cellValueFactory>
             </TableColumn>
-         <TableColumn editable="false" prefWidth="94.0" text="trainer_id">
+         <TableColumn editable="false" prefWidth="71.0" text="trainer_id">
                 <cellValueFactory>
                     <PropertyValueFactory property="trainerId" />
                 </cellValueFactory>
             </TableColumn>
+         <TableColumn editable="false" prefWidth="47.0" text="role">
+            <cellValueFactory>
+               <PropertyValueFactory property="role" />
+            </cellValueFactory>
+         </TableColumn>
         </columns>
     </TableView>
    <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="100.0">
@@ -108,18 +113,52 @@
       </font>
    </Label>
     <VBox layoutX="732.0" layoutY="82.0" prefHeight="400.0" prefWidth="240.0">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Username" textAlignment="CENTER" textFill="WHITE">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Nazwa użytkownika" textAlignment="CENTER" textFill="WHITE">
            <font>
                <Font name="Roboto" size="25.0" />
            </font>
         </Label>
-        <TextField />
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Password" textAlignment="CENTER" textFill="WHITE">
+        <TextField fx:id="usernameField" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Hasło" textAlignment="CENTER" textFill="WHITE">
            <font>
                <Font name="Roboto" size="25.0" />
            </font>
         </Label>
-        <TextField />
+        <TextField fx:id="passwordField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Sala" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="hallField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Grupa" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="groupField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Trener" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="trainerField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Uprawnienia" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="roleField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#addUser" prefHeight="32.0" prefWidth="246.0" text="Dodaj użytkownika" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="14.0" />
+         </font>
+      </Button>
     </VBox>
 
 </AnchorPane>

@@ -68,14 +68,4 @@ public class Machine {
         this.hallId = hallId;
     }
 
-    @Override
-    public String toString() {
-        return "Machines{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", condition='" + condition + '\'' +
-                ", quantity=" + quantity +
-                ", hallId=" + hallId +
-                '}';
-    }
 }

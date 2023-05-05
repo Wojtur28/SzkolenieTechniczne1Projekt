@@ -12,7 +12,6 @@ public class Group {
     @Column(name = "name")
     private String name;
     @Column(name = "difficulty")
-    @Enumerated(EnumType.STRING)
     private Difficulty difficulty;
     @Column(name = "hall_id")
     private Long hallId;
@@ -70,15 +69,5 @@ public class Group {
         this.trainerId = trainerId;
     }
 
-    @Override
-    public String toString() {
-        return "Group{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", difficulty=" + difficulty +
-                ", hallId=" + hallId +
-                ", trainerId=" + trainerId +
-                '}';
-    }
 }
 

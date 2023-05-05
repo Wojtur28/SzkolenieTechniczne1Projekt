@@ -18,5 +18,13 @@ public class UserService {
         return users;
     }
 
+    public void addUser(User user) {
+        EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(user);
+        em.getTransaction().commit();
+        em.close();
+    }
+
 
 }

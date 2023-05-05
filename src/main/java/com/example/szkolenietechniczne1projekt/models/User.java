@@ -19,17 +19,19 @@ public class User {
     private Long groupId;
     @Column(name = "trainer_id")
     private Long trainerId;
+    @Column(name = "role")
+    private Role role;
 
     public User() {
     }
 
-    public User(Long id, String username, String password, Long hallId, Long groupId, Long trainerId) {
-        this.id = id;
+    public User(String username, String password, Long hallId, Long groupId, Long trainerId, Role role) {
         this.username = username;
         this.password = password;
         this.hallId = hallId;
         this.groupId = groupId;
         this.trainerId = trainerId;
+        this.role = role;
     }
 
     public Long getId() {
@@ -80,15 +82,11 @@ public class User {
         this.trainerId = trainerId;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", hallId=" + hallId +
-                ", groupId=" + groupId +
-                ", trainerId=" + trainerId +
-                '}';
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
