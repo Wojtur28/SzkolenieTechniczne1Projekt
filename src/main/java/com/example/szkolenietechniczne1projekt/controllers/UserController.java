@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
@@ -30,11 +31,14 @@ public class UserController extends SceneController implements Initializable{
     @FXML
     private TextField trainerField;
     @FXML
-    private TextField roleField;
+    private ChoiceBox<String> choiceRole;
 
     UserService userService;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        choiceRole.getItems().add(Role.USER.toString());
+        choiceRole.getItems().add(Role.ADMIN.toString());
+
         userService = new UserService();
         List<User> users = userService.getAllUsers();
         ObservableList<User> observableList = FXCollections.observableArrayList(users);
@@ -47,7 +51,7 @@ public class UserController extends SceneController implements Initializable{
         String hall = hallField.getText();
         String group = groupField.getText();
         String trainer = trainerField.getText();
-        String role = roleField.getText();
+        String role = choiceRole.getValue();
 
         User user = new User();
         user.setUsername(username);
