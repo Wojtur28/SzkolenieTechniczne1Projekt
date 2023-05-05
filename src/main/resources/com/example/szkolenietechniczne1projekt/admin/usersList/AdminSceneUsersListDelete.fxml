@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1015.0" stylesheets="@../../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.user.UserAddController">
+    <TableView fx:id="userTable" layoutX="123.0" layoutY="82.0" prefHeight="400.0" prefWidth="501.0">
+        <columns>
+            <TableColumn editable="false" prefWidth="44.0" text="id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" prefWidth="101.0" text="username">
+                <cellValueFactory>
+                    <PropertyValueFactory property="username" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" prefWidth="99.0" text="password">
+                <cellValueFactory>
+                    <PropertyValueFactory property="password" />
+                </cellValueFactory>
+            </TableColumn>
+         <TableColumn editable="false" prefWidth="78.0" text="hall_id">
+                <cellValueFactory>
+                   <PropertyValueFactory property="hallId" />
+                </cellValueFactory>
+            </TableColumn>
+         <TableColumn editable="false" prefWidth="60.0" text="group_id">
+                <cellValueFactory>
+                   <PropertyValueFactory property="groupId" />
+                </cellValueFactory>
+            </TableColumn>
+         <TableColumn editable="false" prefWidth="71.0" text="trainer_id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="trainerId" />
+                </cellValueFactory>
+            </TableColumn>
+         <TableColumn editable="false" prefWidth="47.0" text="role">
+            <cellValueFactory>
+               <PropertyValueFactory property="role" />
+            </cellValueFactory>
+         </TableColumn>
+        </columns>
+    </TableView>
+    <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="100.0">
+        <padding>
+            <Insets top="10.0"/>
+        </padding>
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                onAction="#changeSceneToAdminUsersListAdd" prefHeight="50.0" prefWidth="56.0"
+                stylesheets="@../../../../../styles/mainStyle.css">
+           <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+           </VBox.margin>
+           <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="USER" size="40"/>
+           </graphic>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                onAction="#changeSceneToAdminGroupsList" prefHeight="51.0" prefWidth="56.0"
+                stylesheets="@../../../../../styles/mainStyle.css">
+           <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+           </VBox.margin>
+           <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="40"/>
+           </graphic>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                onAction="#changeSceneToAdminHallsList" prefHeight="50.0" prefWidth="56.0"
+                stylesheets="@../../../../../styles/mainStyle.css">
+           <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+           </VBox.margin>
+           <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="40"/>
+           </graphic>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminMachinesList" prefHeight="50.0" prefWidth="56.0"
+                stylesheets="@../../../../../styles/mainStyle.css">
+           <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+           </VBox.margin>
+           <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="COGS" size="40"/>
+           </graphic>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersList" prefHeight="50.0" prefWidth="56.0"
+                stylesheets="@../../../../../styles/mainStyle.css">
+           <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="ODNOKLASSNIKI" size="40"/>
+           </graphic>
+           <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+           </VBox.margin>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToLogin" prefHeight="50.0" prefWidth="56.0"
+                stylesheets="@../../../../../styles/mainStyle.css">
+           <graphic>
+               <FontAwesomeIconView fill="WHITE" glyphName="POWER_OFF" size="40"/>
+           </graphic>
+           <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+           </VBox.margin>
+        </Button>
+    </VBox>
+   <Label alignment="CENTER" layoutX="169.0" layoutY="14.0" prefHeight="50.0" prefWidth="352.0" text="Klienci" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="Roboto Regular" size="43.0" />
+      </font>
+   </Label>
+    <VBox layoutX="681.0" layoutY="82.0" prefHeight="400.0" prefWidth="249.0">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="254.0" text="Nazwa użytkownika" textAlignment="CENTER" textFill="WHITE">
+           <font>
+               <Font name="Roboto" size="25.0" />
+           </font>
+        </Label>
+        <TextField fx:id="usernameField" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="254.0" text="Hasło" textAlignment="CENTER" textFill="WHITE">
+           <font>
+               <Font name="Roboto" size="25.0" />
+           </font>
+        </Label>
+        <TextField fx:id="passwordField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="252.0" text="Sala" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="hallField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="260.0" text="Grupa" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="groupField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="253.0" text="Trener" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="trainerField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="254.0" text="Uprawnienia" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceRole" prefHeight="28.0" prefWidth="250.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#addUser" prefHeight="32.0" prefWidth="246.0" text="Dodaj użytkownika" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="14.0" />
+         </font>
+      </Button>
+    </VBox>
+    <HBox layoutX="629.0" layoutY="22.0" prefHeight="32.0" prefWidth="377.0">
+        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Przeglądaj" textFill="WHITE"/>
+        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Dodaj" textFill="WHITE"/>
+        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Edytuj" textFill="WHITE"/>
+        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Usuń" textFill="WHITE"/>
+    </HBox>
+
+</AnchorPane>

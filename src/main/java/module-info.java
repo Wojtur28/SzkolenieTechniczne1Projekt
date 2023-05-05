@@ -17,4 +17,6 @@ module com.example.szkolenietechniczne1projekt {
     opens com.example.szkolenietechniczne1projekt.controllers to javafx.fxml, org.hibernate.orm.core;
     exports com.example.szkolenietechniczne1projekt.controllers.sceneController;
     opens com.example.szkolenietechniczne1projekt.controllers.sceneController to javafx.fxml, org.hibernate.orm.core;
+    exports com.example.szkolenietechniczne1projekt.controllers.user;
+    opens com.example.szkolenietechniczne1projekt.controllers.user to javafx.fxml, org.hibernate.orm.core;
 }

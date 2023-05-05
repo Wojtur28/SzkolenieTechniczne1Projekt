@@ -1,4 +1,4 @@
-package com.example.szkolenietechniczne1projekt.controllers;
+package com.example.szkolenietechniczne1projekt.controllers.user;
 
 import com.example.szkolenietechniczne1projekt.controllers.sceneController.SceneController;
 import com.example.szkolenietechniczne1projekt.models.Role;
@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class UserController extends SceneController implements Initializable{
+public class UserAddController extends SceneController implements Initializable{
 
     @FXML
     private TableView<User> userTable;

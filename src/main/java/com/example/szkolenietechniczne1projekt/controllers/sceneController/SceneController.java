@@ -42,8 +42,19 @@ public abstract class SceneController {
     }
 
     @FXML
-    public void changeSceneToAdminUsersList(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/AdminSceneUsersList.fxml"));
+    public void changeSceneToAdminUsersListAdd(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/usersList/AdminSceneUsersListAdd.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminUsersListRead(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/usersList/AdminSceneUsersListRead.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setResizable(false);
@@ -54,7 +65,7 @@ public abstract class SceneController {
 
     @FXML
     public void changeSceneToAdminGroupsList(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/AdminSceneGroupsList.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/groupsList/AdminSceneGroupsList.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setResizable(false);
@@ -65,7 +76,7 @@ public abstract class SceneController {
 
     @FXML
     public void changeSceneToAdminTrainersList(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/AdminSceneTrainersList.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/trainersList/AdminSceneTrainersList.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setResizable(false);
@@ -76,7 +87,7 @@ public abstract class SceneController {
 
     @FXML
     public void changeSceneToAdminHallsList(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/AdminSceneHallsList.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/hallsList/AdminSceneHallsList.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setResizable(false);
@@ -87,7 +98,7 @@ public abstract class SceneController {
 
     @FXML
     public void changeSceneToAdminMachinesList(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/AdminSceneMachinesList.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/machinesList/AdminSceneMachinesList.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setResizable(false);
