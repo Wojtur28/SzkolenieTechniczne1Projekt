@@ -1,6 +1,6 @@
 package com.example.szkolenietechniczne1projekt.controllers;
 
-import com.example.szkolenietechniczne1projekt.controllers.sceneController.SceneController;
+import com.example.szkolenietechniczne1projekt.controllers.mainController.MainController;
 import com.example.szkolenietechniczne1projekt.models.Trainer;
 import com.example.szkolenietechniczne1projekt.services.TrainerService;
 import javafx.collections.ObservableList;
@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class TrainerController extends SceneController implements Initializable {
+public class TrainerController extends MainController implements Initializable {
 
     @FXML
     private TableView<Trainer> trainerTable;

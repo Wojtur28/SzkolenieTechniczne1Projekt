@@ -1,6 +1,6 @@
 package com.example.szkolenietechniczne1projekt.controllers;
 
-import com.example.szkolenietechniczne1projekt.controllers.sceneController.SceneController;
+import com.example.szkolenietechniczne1projekt.controllers.mainController.MainController;
 import com.example.szkolenietechniczne1projekt.models.Group;
 import com.example.szkolenietechniczne1projekt.services.GroupService;
 import javafx.collections.FXCollections;
@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class GroupController extends SceneController implements Initializable {
+public class GroupController extends MainController implements Initializable {
 
     @FXML
     private TableView<Group> groupTable;

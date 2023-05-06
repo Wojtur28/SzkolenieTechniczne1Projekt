@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1015.0" stylesheets="@../../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.user.UserAddController">
+<AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1015.0" stylesheets="@../../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.user.UserUpdateController">
     <TableView fx:id="userTable" layoutX="123.0" layoutY="82.0" prefHeight="400.0" prefWidth="501.0">
         <columns>
             <TableColumn editable="false" prefWidth="44.0" text="id">
@@ -56,63 +56,54 @@
     </TableView>
     <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="100.0">
         <padding>
-            <Insets top="10.0"/>
+            <Insets top="10.0" />
         </padding>
-        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                onAction="#changeSceneToAdminUsersListAdd" prefHeight="50.0" prefWidth="56.0"
-                stylesheets="@../../../../../styles/mainStyle.css">
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneToAdminUsersListAdd" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
            <VBox.margin>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
            </VBox.margin>
            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="USER" size="40"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="USER" size="40" />
            </graphic>
         </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                onAction="#changeSceneToAdminGroupsList" prefHeight="51.0" prefWidth="56.0"
-                stylesheets="@../../../../../styles/mainStyle.css">
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneToAdminGroupsList" prefHeight="51.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
            <VBox.margin>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
            </VBox.margin>
            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="40"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="40" />
            </graphic>
         </Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                onAction="#changeSceneToAdminHallsList" prefHeight="50.0" prefWidth="56.0"
-                stylesheets="@../../../../../styles/mainStyle.css">
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneToAdminHallsList" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
            <VBox.margin>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
            </VBox.margin>
            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="40"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="40" />
            </graphic>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminMachinesList" prefHeight="50.0" prefWidth="56.0"
-                stylesheets="@../../../../../styles/mainStyle.css">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminMachinesList" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
            <VBox.margin>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
            </VBox.margin>
            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="COGS" size="40"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="COGS" size="40" />
            </graphic>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersList" prefHeight="50.0" prefWidth="56.0"
-                stylesheets="@../../../../../styles/mainStyle.css">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersList" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="ODNOKLASSNIKI" size="40"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="ODNOKLASSNIKI" size="40" />
            </graphic>
            <VBox.margin>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
            </VBox.margin>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToLogin" prefHeight="50.0" prefWidth="56.0"
-                stylesheets="@../../../../../styles/mainStyle.css">
+        <Button mnemonicParsing="false" onAction="#changeSceneToLogin" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="POWER_OFF" size="40"/>
+               <FontAwesomeIconView fill="WHITE" glyphName="POWER_OFF" size="40" />
            </graphic>
            <VBox.margin>
-               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
            </VBox.margin>
         </Button>
     </VBox>
@@ -121,7 +112,13 @@
          <Font name="Roboto Regular" size="43.0" />
       </font>
    </Label>
-    <VBox layoutX="681.0" layoutY="82.0" prefHeight="400.0" prefWidth="249.0">
+    <VBox layoutX="681.0" layoutY="79.0" prefHeight="488.0" prefWidth="249.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="254.0" text="Identyfikator klienta" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceUser" prefHeight="25.0" prefWidth="254.0" />
         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="254.0" text="Nazwa użytkownika" textAlignment="CENTER" textFill="WHITE">
            <font>
                <Font name="Roboto" size="25.0" />
@@ -139,41 +136,53 @@
             <Font name="Roboto" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="hallField" />
+      <ChoiceBox fx:id="choiceHall" prefHeight="25.0" prefWidth="254.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="260.0" text="Grupa" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Roboto" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="groupField" />
+      <ChoiceBox fx:id="choiceGroup" prefHeight="25.0" prefWidth="254.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="253.0" text="Trener" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Roboto" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="trainerField" />
+      <ChoiceBox fx:id="choiceTrainer" prefHeight="25.0" prefWidth="254.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="254.0" text="Uprawnienia" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Roboto" size="25.0" />
          </font>
       </Label>
       <ChoiceBox fx:id="choiceRole" prefHeight="28.0" prefWidth="250.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="252.0" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Roboto" size="25.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" onAction="#addUser" prefHeight="32.0" prefWidth="246.0" text="Dodaj użytkownika" textFill="WHITE">
+      <Button mnemonicParsing="false" onAction="#updateUser" prefHeight="32.0" prefWidth="246.0" text="Edytuj użytkownika" textFill="WHITE">
          <font>
-            <Font name="Roboto" size="14.0" />
+            <Font name="Roboto Regular" size="14.0" />
          </font>
       </Button>
     </VBox>
     <HBox layoutX="629.0" layoutY="22.0" prefHeight="32.0" prefWidth="377.0">
-        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Przeglądaj" textFill="WHITE"/>
-        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Dodaj" textFill="WHITE"/>
-        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Edytuj" textFill="WHITE"/>
-        <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Usuń" textFill="WHITE"/>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminUsersListRead" prefHeight="32.0" prefWidth="100.0" text="Przeglądaj" textFill="WHITE">
+         <font>
+            <Font name="Roboto Regular" size="12.0" />
+         </font></Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminUsersListAdd" prefHeight="32.0" prefWidth="100.0" text="Dodaj" textFill="WHITE">
+         <font>
+            <Font name="Roboto Regular" size="12.0" />
+         </font></Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminUsersListUpdate" prefHeight="32.0" prefWidth="100.0" text="Edytuj" textFill="WHITE">
+         <font>
+            <Font name="Roboto Regular" size="12.0" />
+         </font></Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminUsersListDelete" prefHeight="32.0" prefWidth="100.0" text="Usuń" textFill="WHITE">
+         <font>
+            <Font name="Roboto Regular" size="12.0" />
+         </font></Button>
     </HBox>
 
 </AnchorPane>

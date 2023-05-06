@@ -68,4 +68,8 @@ public class Machine {
         this.hallId = hallId;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(this.id);
+    }
 }

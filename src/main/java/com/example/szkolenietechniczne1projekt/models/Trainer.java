@@ -70,4 +70,9 @@ public class Trainer {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(this.id);
+    }
+
 }

@@ -15,10 +15,12 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class UserAddController extends MainController implements Initializable{
+public class UserUpdateController extends MainController implements Initializable {
 
     @FXML
     private TableView<User> userTable;
+    @FXML
+    private ChoiceBox<User> choiceUser;
     @FXML
     private TextField usernameField;
     @FXML
@@ -32,13 +34,15 @@ public class UserAddController extends MainController implements Initializable{
     @FXML
     private ChoiceBox<String> choiceRole;
 
-    UserService userService;
 
+    UserService userService;
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userService = new UserService();
 
         List<User> users = userService.getAllUsers();
         ObservableList<User> observableList = FXCollections.observableArrayList(users);
+        choiceUser.setItems(observableList);
         userTable.setItems(observableList);
 
         choiceRole.getItems().add(Role.USER.toString());
@@ -48,29 +52,23 @@ public class UserAddController extends MainController implements Initializable{
 
     }
 
-    public void addUser() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-        String hall = choiceHall.getValue().toString();
-        String group = choiceGroup.getValue().toString();
-        String trainer = choiceTrainer.getValue().toString();
-        String role = choiceRole.getValue();
+    public void updateUser() {
+        User selectedUser = choiceUser.getValue();
 
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setHallId(Long.valueOf(hall));
-        user.setGroupId(Long.valueOf(group));
-        user.setTrainerId(Long.valueOf(trainer));
-        user.setRole(Role.valueOf(role));
+        // przypisz nowe wartości pól wyboru do wybranego użytkownika
+        selectedUser.setUsername(usernameField.getText());
+        selectedUser.setPassword(passwordField.getText());
+        selectedUser.setHallId(choiceHall.getValue().getId());
+        selectedUser.setGroupId(choiceGroup.getValue().getId());
+        selectedUser.setTrainerId(choiceTrainer.getValue().getId());
+        selectedUser.setRole(Role.valueOf(choiceRole.getValue()));
 
-        userService.addUser(user);
+        // zapisz zmiany w bazie danych
+        userService.updateUser(selectedUser);
 
         // zaktualizuj tabelę użytkowników
         List<User> users = userService.getAllUsers();
         ObservableList<User> observableList = FXCollections.observableArrayList(users);
         userTable.setItems(observableList);
     }
-
-
 }

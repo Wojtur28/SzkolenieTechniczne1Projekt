@@ -58,5 +58,10 @@ public class Hall {
         isCleaned = cleaned;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(this.id);
+    }
+
 }
 

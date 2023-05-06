@@ -69,5 +69,10 @@ public class Group {
         this.trainerId = trainerId;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(this.id);
+    }
+
 }
 
