@@ -120,8 +120,41 @@ public abstract class MainController {
     }
 
     @FXML
-    public void changeSceneToAdminTrainersList(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/trainersList/AdminSceneTrainersList.fxml"));
+    public void changeSceneToAdminTrainersListAdd(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/trainersList/AdminSceneTrainersListAdd.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminTrainersListRead(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/trainersList/AdminSceneTrainersListRead.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminTrainersListUpdate(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/trainersList/AdminSceneTrainersListUpdate.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminTrainersListDelete(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/trainersList/AdminSceneTrainersListDelete.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setResizable(false);

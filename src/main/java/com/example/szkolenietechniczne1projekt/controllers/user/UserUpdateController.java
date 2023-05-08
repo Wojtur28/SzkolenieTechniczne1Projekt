@@ -55,7 +55,6 @@ public class UserUpdateController extends MainController implements Initializabl
     public void updateUser() {
         User selectedUser = choiceUser.getValue();
 
-        // przypisz nowe wartości pól wyboru do wybranego użytkownika
         selectedUser.setUsername(usernameField.getText());
         selectedUser.setPassword(passwordField.getText());
         selectedUser.setHallId(choiceHall.getValue().getId());
@@ -63,10 +62,8 @@ public class UserUpdateController extends MainController implements Initializabl
         selectedUser.setTrainerId(choiceTrainer.getValue().getId());
         selectedUser.setRole(Role.valueOf(choiceRole.getValue()));
 
-        // zapisz zmiany w bazie danych
         userService.updateUser(selectedUser);
 
-        // zaktualizuj tabelę użytkowników
         List<User> users = userService.getAllUsers();
         ObservableList<User> observableList = FXCollections.observableArrayList(users);
         userTable.setItems(observableList);

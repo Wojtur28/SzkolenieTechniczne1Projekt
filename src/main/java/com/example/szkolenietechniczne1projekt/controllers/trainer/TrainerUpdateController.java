@@ -1,4 +1,4 @@
-package com.example.szkolenietechniczne1projekt.controllers;
+package com.example.szkolenietechniczne1projekt.controllers.trainer;
 
 import com.example.szkolenietechniczne1projekt.controllers.mainController.MainController;
 import com.example.szkolenietechniczne1projekt.models.Trainer;
@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class TrainerController extends MainController implements Initializable {
+public class TrainerUpdateController extends MainController implements Initializable {
 
     @FXML
     private TableView<Trainer> trainerTable;

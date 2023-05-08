@@ -42,7 +42,7 @@
             <Insets top="10.0"/>
         </padding>
         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
-                onAction="#changeSceneToAdminUsersListAdd" prefHeight="50.0" prefWidth="56.0"
+                onAction="#changeSceneToAdminUsersListRead" prefHeight="50.0" prefWidth="56.0"
                 stylesheets="@../../../../../styles/mainStyle.css">
             <VBox.margin>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
@@ -80,7 +80,7 @@
                 <FontAwesomeIconView fill="WHITE" glyphName="COGS" size="40"/>
             </graphic>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersList" prefHeight="50.0" prefWidth="56.0"
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersListRead" prefHeight="50.0" prefWidth="56.0"
                 stylesheets="@../../../../../styles/mainStyle.css">
             <graphic>
                 <FontAwesomeIconView fill="WHITE" glyphName="ODNOKLASSNIKI" size="40"/>
