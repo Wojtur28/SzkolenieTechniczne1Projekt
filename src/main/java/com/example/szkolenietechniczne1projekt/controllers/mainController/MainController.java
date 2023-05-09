@@ -164,8 +164,41 @@ public abstract class MainController {
     }
 
     @FXML
-    public void changeSceneToAdminHallsList(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/hallsList/AdminSceneHallsList.fxml"));
+    public void changeSceneToAdminHallsListAdd(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/hallsList/AdminSceneHallsListAdd.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminHallsListRead(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/hallsList/AdminSceneHallsListRead.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminHallsListUpdate(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/hallsList/AdminSceneHallsListUpdate.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminHallsListDelete(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/hallsList/AdminSceneHallsListDelete.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setResizable(false);

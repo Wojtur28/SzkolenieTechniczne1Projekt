@@ -34,7 +34,6 @@ public class UserUpdateController extends MainController implements Initializabl
     @FXML
     private ChoiceBox<String> choiceRole;
 
-
     UserService userService;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

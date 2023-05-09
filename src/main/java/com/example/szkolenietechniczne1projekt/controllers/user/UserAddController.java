@@ -66,7 +66,6 @@ public class UserAddController extends MainController implements Initializable{
 
         userService.addUser(user);
 
-        // zaktualizuj tabelę użytkowników
         List<User> users = userService.getAllUsers();
         ObservableList<User> observableList = FXCollections.observableArrayList(users);
         userTable.setItems(observableList);
