@@ -7,38 +7,39 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1015.0" stylesheets="@../../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.trainer.TrainerDeleteController">
-    <TableView fx:id="trainerTable" layoutX="169.0" layoutY="82.0" prefHeight="400.0" prefWidth="518.0">
+<AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1015.0" stylesheets="@../../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.group.GroupUpdateController">
+    <TableView fx:id="groupTable" layoutX="169.0" layoutY="82.0" prefHeight="400.0" prefWidth="522.0">
         <columns>
             <TableColumn prefWidth="31.0" text="id">
                 <cellValueFactory>
                     <PropertyValueFactory property="id" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="101.0" text="first_name">
+            <TableColumn prefWidth="79.0" text="name">
                 <cellValueFactory>
-                    <PropertyValueFactory property="firstName" />
+                    <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="115.0" text="last_name">
+            <TableColumn prefWidth="58.0" text="difficulty">
                 <cellValueFactory>
-                    <PropertyValueFactory property="lastName" />
+                    <PropertyValueFactory property="difficulty" />
                 </cellValueFactory>
             </TableColumn>
-         <TableColumn prefWidth="116.0" text="email">
+         <TableColumn prefWidth="114.0" text="hall_id">
                 <cellValueFactory>
-                    <PropertyValueFactory property="email" />
+                    <PropertyValueFactory property="hallId" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="154.0" text="phone_number">
+            <TableColumn prefWidth="114.0" text="trainer_id">
                 <cellValueFactory>
-                    <PropertyValueFactory property="phoneNumber" />
+                    <PropertyValueFactory property="trainerId" />
                 </cellValueFactory>
             </TableColumn>
         </columns>
@@ -96,49 +97,57 @@
             </VBox.margin>
         </Button>
     </VBox>
-    <Label alignment="CENTER" layoutX="169.0" layoutY="14.0" prefHeight="50.0" prefWidth="352.0" text="Trenerzy" textAlignment="CENTER" textFill="WHITE">
+    <Label alignment="CENTER" layoutX="169.0" layoutY="14.0" prefHeight="50.0" prefWidth="352.0" text="Grupy" textAlignment="CENTER" textFill="WHITE">
         <font>
             <Font name="Roboto Regular" size="43.0" />
         </font>
     </Label>
-    <VBox layoutX="738.0" layoutY="82.0" prefHeight="400.0" prefWidth="240.0">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Identyfikator" textAlignment="CENTER" textFill="WHITE">
+    <VBox layoutX="737.0" layoutY="82.0" prefHeight="400.0" prefWidth="240.0">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Nazwa grupy" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Roboto" size="25.0" />
             </font>
         </Label>
-      <ChoiceBox fx:id="choiceTrainer" prefHeight="25.0" prefWidth="250.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" textAlignment="CENTER" textFill="WHITE">
+        <TextField fx:id="nameGroupField" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Poziom trudności" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Roboto" size="25.0" />
+            </font>
+        </Label>
+      <ChoiceBox fx:id="choiceDifficulty" prefHeight="25.0" prefWidth="249.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Sala" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Roboto" size="25.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" onAction="#deleteTrainer" prefHeight="32.0" prefWidth="246.0" text="Usuń trenera" textFill="WHITE">
+      <ChoiceBox fx:id="choiceHall" prefHeight="25.0" prefWidth="247.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Trener" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Roboto Regular" size="14.0" />
+            <Font name="Roboto" size="25.0" />
          </font>
-      </Button>
+      </Label>
+      <ChoiceBox fx:id="choiceTrainer" prefHeight="25.0" prefWidth="244.0" />
     </VBox>
-    <HBox alignment="CENTER" layoutX="561.0" layoutY="25.0" prefHeight="32.0" prefWidth="417.0">
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersListRead" prefHeight="32.0"
-                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
+    <HBox alignment="CENTER" layoutX="560.0" layoutY="25.0" prefHeight="32.0" prefWidth="417.0">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListRead" prefHeight="32.0" prefWidth="100.0"
+                stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
            <font>
                <Font name="Roboto Regular" size="12.0"/>
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersListAdd" prefHeight="32.0"
-                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListAdd" prefHeight="32.0" prefWidth="100.0"
+                stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
            <font>
                <Font name="Roboto Regular" size="12.0"/>
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersListUpdate" prefHeight="32.0"
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListUpdate" prefHeight="32.0"
                 prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Edytuj" textFill="WHITE">
            <font>
                <Font name="Roboto Regular" size="12.0"/>
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersListDelete" prefHeight="32.0"
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListDelete" prefHeight="32.0"
                 prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Usuń" textFill="WHITE">
            <font>
                <Font name="Roboto Regular" size="12.0"/>

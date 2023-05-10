@@ -1,4 +1,4 @@
-package com.example.szkolenietechniczne1projekt.controllers;
+package com.example.szkolenietechniczne1projekt.controllers.group;
 
 import com.example.szkolenietechniczne1projekt.controllers.mainController.MainController;
 import com.example.szkolenietechniczne1projekt.models.Group;
@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class GroupController extends MainController implements Initializable {
+public class GroupUpdateController extends MainController implements Initializable {
 
     @FXML
     private TableView<Group> groupTable;
