@@ -6,6 +6,7 @@ import com.example.szkolenietechniczne1projekt.services.HallService;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 
 import java.net.URL;
@@ -16,6 +17,8 @@ public class HallDeleteController extends MainController implements Initializabl
 
     @FXML
     private TableView<Hall> hallTable;
+    @FXML
+    private ChoiceBox<Hall> choiceHall;
 
     HallService hallService;
 
@@ -25,5 +28,16 @@ public class HallDeleteController extends MainController implements Initializabl
         List<Hall> halls = hallService.getAllHalls();
         ObservableList<Hall> observableList = javafx.collections.FXCollections.observableArrayList(halls);
         hallTable.setItems(observableList);
+        choiceHall.setItems(observableList);
     }
+
+    public void deleteHall() {
+        Hall selectedHall = choiceHall.getValue();
+        hallService.deleteHall(selectedHall.getId());
+
+        List<Hall> halls = hallService.getAllHalls();
+        ObservableList<Hall> observableList = javafx.collections.FXCollections.observableArrayList(halls);
+        hallTable.setItems(observableList);
+    }
+
 }

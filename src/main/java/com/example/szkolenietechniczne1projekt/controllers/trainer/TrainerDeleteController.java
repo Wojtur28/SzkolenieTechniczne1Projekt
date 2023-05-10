@@ -28,6 +28,7 @@ public class TrainerDeleteController extends MainController implements Initializ
         List<Trainer> trainers = trainerService.getAllTrainers();
         ObservableList<Trainer> observableList = javafx.collections.FXCollections.observableArrayList(trainers);
         trainerTable.setItems(observableList);
+
         choiceTrainer.setItems(observableList);
     }
 

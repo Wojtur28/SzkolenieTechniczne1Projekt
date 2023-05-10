@@ -34,6 +34,7 @@ public class TrainerUpdateController extends MainController implements Initializ
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         trainerService = new TrainerService();
+
         List<Trainer> trainers = trainerService.getAllTrainers();
         ObservableList<Trainer> observableList = javafx.collections.FXCollections.observableArrayList(trainers);
         trainerTable.setItems(observableList);

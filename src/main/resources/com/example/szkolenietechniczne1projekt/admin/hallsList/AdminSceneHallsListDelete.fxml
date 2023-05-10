@@ -108,35 +108,31 @@
             <Font name="Roboto" size="25.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="246.0" text="Usuń halę" textFill="WHITE">
+      <Button mnemonicParsing="false" onAction="#deleteHall" prefHeight="32.0" prefWidth="246.0" text="Usuń halę" textFill="WHITE">
          <font>
             <Font name="Roboto Regular" size="14.0" />
          </font>
       </Button>
     </VBox>
     <HBox alignment="CENTER" layoutX="564.0" layoutY="25.0" prefHeight="32.0" prefWidth="417.0">
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminHallsListRead" prefHeight="32.0" prefWidth="100.0"
-                stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminHallsListRead" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminHallsListAdd" prefHeight="32.0" prefWidth="100.0"
-                stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminHallsListAdd" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminHallsListUpdate" prefHeight="32.0"
-                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Edytuj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminHallsListUpdate" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Edytuj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminHallsListDelete" prefHeight="32.0"
-                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Usuń" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminHallsListDelete" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Usuń" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
     </HBox>
