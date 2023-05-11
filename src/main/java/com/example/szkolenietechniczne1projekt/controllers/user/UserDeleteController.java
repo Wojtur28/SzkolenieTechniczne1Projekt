@@ -29,8 +29,9 @@ public class UserDeleteController  extends MainController implements Initializab
 
         List<User> users = userService.getAllUsers();
         ObservableList<User> observableList = FXCollections.observableArrayList(users);
-        choiceUser.setItems(observableList);
         userTable.setItems(observableList);
+
+        choiceUser.setItems(observableList);
     }
 
     public void deleteUser() {

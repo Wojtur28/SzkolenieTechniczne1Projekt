@@ -18,6 +18,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.example.szkolenietechniczne1projekt.services.GroupService.setGroupChoiceBoxValue;
+
 public class GroupAddController extends MainController implements Initializable {
 
     @FXML
@@ -38,13 +40,9 @@ public class GroupAddController extends MainController implements Initializable 
         ObservableList<Group> observableList = FXCollections.observableArrayList(groups);
         groupTable.setItems(observableList);
 
-        List<Hall> halls = groupService.getAllHalls();
-        ObservableList<Hall> observableListHalls = FXCollections.observableArrayList(halls);
-        choiceHall.setItems(observableListHalls);
+        choiceDifficulty.setItems(FXCollections.observableArrayList(Difficulty.values()));
 
-        List<Trainer> trainers = groupService.getAllTrainers();
-        ObservableList<Trainer> observableListTrainers = FXCollections.observableArrayList(trainers);
-        choiceTrainer.setItems(observableListTrainers);
+        setGroupChoiceBoxValue(groupService, choiceHall, choiceTrainer);
     }
 
     public void addGroup() {

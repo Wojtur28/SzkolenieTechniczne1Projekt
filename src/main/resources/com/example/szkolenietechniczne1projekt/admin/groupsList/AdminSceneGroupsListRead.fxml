@@ -3,11 +3,9 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -15,29 +13,29 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1015.0" stylesheets="@../../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.group.GroupReadController">
-    <TableView fx:id="groupTable" layoutX="169.0" layoutY="82.0" prefHeight="400.0" prefWidth="522.0">
+    <TableView fx:id="groupTable" layoutX="169.0" layoutY="82.0" prefHeight="400.0" prefWidth="798.0">
         <columns>
             <TableColumn prefWidth="31.0" text="id">
                 <cellValueFactory>
                     <PropertyValueFactory property="id" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="79.0" text="name">
+            <TableColumn prefWidth="157.0" text="name">
                 <cellValueFactory>
                     <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="58.0" text="difficulty">
+            <TableColumn prefWidth="138.0" text="difficulty">
                 <cellValueFactory>
                     <PropertyValueFactory property="difficulty" />
                 </cellValueFactory>
             </TableColumn>
-         <TableColumn prefWidth="114.0" text="hall_id">
+         <TableColumn prefWidth="162.0" text="hall_id">
                 <cellValueFactory>
                     <PropertyValueFactory property="hallId" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="114.0" text="trainer_id">
+            <TableColumn prefWidth="309.0" text="trainer_id">
                 <cellValueFactory>
                     <PropertyValueFactory property="trainerId" />
                 </cellValueFactory>
@@ -102,55 +100,25 @@
             <Font name="Roboto Regular" size="43.0" />
         </font>
     </Label>
-    <VBox layoutX="737.0" layoutY="82.0" prefHeight="400.0" prefWidth="240.0">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Nazwa grupy" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font name="Roboto" size="25.0" />
-            </font>
-        </Label>
-        <TextField fx:id="nameGroupField" />
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Poziom trudności" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font name="Roboto" size="25.0" />
-            </font>
-        </Label>
-      <ChoiceBox fx:id="choiceDifficulty" prefHeight="25.0" prefWidth="249.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Sala" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Roboto" size="25.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choiceHall" prefHeight="25.0" prefWidth="247.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Trener" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Roboto" size="25.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choiceTrainer" prefHeight="25.0" prefWidth="244.0" />
-    </VBox>
     <HBox alignment="CENTER" layoutX="560.0" layoutY="25.0" prefHeight="32.0" prefWidth="417.0">
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListRead" prefHeight="32.0" prefWidth="100.0"
-                stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListRead" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListAdd" prefHeight="32.0" prefWidth="100.0"
-                stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListAdd" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListUpdate" prefHeight="32.0"
-                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Edytuj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListUpdate" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Edytuj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListDelete" prefHeight="32.0"
-                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Usuń" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListDelete" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Usuń" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
     </HBox>

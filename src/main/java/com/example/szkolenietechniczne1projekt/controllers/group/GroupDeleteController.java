@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 
 import java.net.URL;
@@ -17,6 +18,8 @@ public class GroupDeleteController extends MainController implements Initializab
 
     @FXML
     private TableView<Group> groupTable;
+    @FXML
+    private ChoiceBox<Group> choiceGroup;
 
     GroupService groupService;
 
@@ -24,6 +27,17 @@ public class GroupDeleteController extends MainController implements Initializab
         groupService = new GroupService();
         List<Group> groups = groupService.getAllGroups();
         ObservableList<Group> observableList = FXCollections.observableArrayList(groups);
+        groupTable.setItems(observableList);
+
+        choiceGroup.setItems(observableList);
+    }
+
+    public void deleteGroup() {
+        Group selectedGroup = choiceGroup.getValue();
+        groupService.deleteGroup(selectedGroup.getId());
+
+        List<Group> updatedGroups = groupService.getAllGroups();
+        ObservableList<Group> observableList = FXCollections.observableArrayList(updatedGroups);
         groupTable.setItems(observableList);
     }
 }

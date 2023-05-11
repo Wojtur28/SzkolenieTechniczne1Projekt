@@ -1,46 +1,26 @@
 package com.example.szkolenietechniczne1projekt.controllers.mainController;
 
 import com.example.szkolenietechniczne1projekt.HelloApplication;
-import com.example.szkolenietechniczne1projekt.models.Group;
-import com.example.szkolenietechniczne1projekt.models.Hall;
-import com.example.szkolenietechniczne1projekt.models.Trainer;
-import com.example.szkolenietechniczne1projekt.services.UserService;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 
 public abstract class MainController {
 
 
     @FXML
-    public void closeApp(ActionEvent event) {
+    public void closeApp() {
         Platform.exit();
         System.exit(0);
     }
 
-    public static void setChoiceBoxValue(UserService userService, ChoiceBox<Hall> choiceHall, ChoiceBox<Group> choiceGroup, ChoiceBox<Trainer> choiceTrainer) {
-        List<Hall> halls = userService.getAllHalls();
-        ObservableList<Hall> hallIdsObservableList = FXCollections.observableArrayList(halls);
-        choiceHall.setItems(hallIdsObservableList);
 
-        List<Group> groups = userService.getAllGroups();
-        ObservableList<Group> groupsObservableList = FXCollections.observableArrayList(groups);
-        choiceGroup.setItems(groupsObservableList);
-
-        List<Trainer> trainers = userService.getAllTrainers();
-        ObservableList<Trainer> trainersObservableList = FXCollections.observableArrayList(trainers);
-        choiceTrainer.setItems(trainersObservableList);
-    }
 
     @FXML
     public void changeSceneToRegister(ActionEvent actionEvent) throws IOException {

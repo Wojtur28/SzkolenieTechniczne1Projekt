@@ -7,7 +7,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -103,54 +102,42 @@
         </font>
     </Label>
     <VBox layoutX="737.0" layoutY="82.0" prefHeight="400.0" prefWidth="240.0">
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Nazwa grupy" textAlignment="CENTER" textFill="WHITE">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Identyfikator" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Roboto" size="25.0" />
             </font>
         </Label>
-        <TextField fx:id="nameGroupField" />
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Poziom trudności" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font name="Roboto" size="25.0" />
-            </font>
-        </Label>
-      <ChoiceBox fx:id="choiceDifficulty" prefHeight="25.0" prefWidth="249.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Sala" textAlignment="CENTER" textFill="WHITE">
+      <ChoiceBox fx:id="choiceGroup" prefHeight="25.0" prefWidth="244.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="250.0" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Roboto" size="25.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choiceHall" prefHeight="25.0" prefWidth="247.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Trener" textAlignment="CENTER" textFill="WHITE">
+      <Button mnemonicParsing="false" onAction="#deleteGroup" prefHeight="32.0" prefWidth="246.0" text="Usuń grupę" textFill="WHITE">
          <font>
-            <Font name="Roboto" size="25.0" />
+            <Font name="Roboto Regular" size="14.0" />
          </font>
-      </Label>
-      <ChoiceBox fx:id="choiceTrainer" prefHeight="25.0" prefWidth="244.0" />
+      </Button>
     </VBox>
     <HBox alignment="CENTER" layoutX="560.0" layoutY="25.0" prefHeight="32.0" prefWidth="417.0">
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListRead" prefHeight="32.0" prefWidth="100.0"
-                stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListRead" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListAdd" prefHeight="32.0" prefWidth="100.0"
-                stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListAdd" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListUpdate" prefHeight="32.0"
-                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Edytuj" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListUpdate" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Edytuj" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListDelete" prefHeight="32.0"
-                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Usuń" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListDelete" prefHeight="32.0" prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Usuń" textFill="WHITE">
            <font>
-               <Font name="Roboto Regular" size="12.0"/>
+               <Font name="Roboto Regular" size="12.0" />
            </font>
         </Button>
     </HBox>

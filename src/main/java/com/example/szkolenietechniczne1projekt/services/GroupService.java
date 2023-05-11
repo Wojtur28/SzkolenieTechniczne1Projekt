@@ -2,11 +2,17 @@ package com.example.szkolenietechniczne1projekt.services;
 
 
 import com.example.szkolenietechniczne1projekt.models.Group;
+import com.example.szkolenietechniczne1projekt.models.Hall;
+import com.example.szkolenietechniczne1projekt.models.Trainer;
 import com.example.szkolenietechniczne1projekt.services.main.MainService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ChoiceBox;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class GroupService extends MainService {
 
@@ -44,5 +50,15 @@ public class GroupService extends MainService {
         }
         em.getTransaction().commit();
         em.close();
+    }
+
+    public static void setGroupChoiceBoxValue(GroupService groupService, ChoiceBox<Hall> choiceHall, ChoiceBox<Trainer> choiceTrainer) {
+        List<Hall> halls = groupService.getAllHalls();
+        ObservableList<Hall> hallIdsObservableList = FXCollections.observableArrayList(halls);
+        choiceHall.setItems(hallIdsObservableList);
+
+        List<Trainer> trainers = groupService.getAllTrainers();
+        ObservableList<Trainer> trainersObservableList = FXCollections.observableArrayList(trainers);
+        choiceTrainer.setItems(trainersObservableList);
     }
 }

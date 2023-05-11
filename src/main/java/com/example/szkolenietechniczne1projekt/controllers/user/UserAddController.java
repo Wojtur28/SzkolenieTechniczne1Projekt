@@ -15,6 +15,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static com.example.szkolenietechniczne1projekt.services.UserService.setUserChoiceBoxValue;
+
 public class UserAddController extends MainController implements Initializable{
 
     @FXML
@@ -44,7 +46,7 @@ public class UserAddController extends MainController implements Initializable{
         choiceRole.getItems().add(Role.USER.toString());
         choiceRole.getItems().add(Role.ADMIN.toString());
 
-        setChoiceBoxValue(userService, choiceHall, choiceGroup, choiceTrainer);
+        setUserChoiceBoxValue(userService, choiceHall, choiceGroup, choiceTrainer);
 
     }
 
