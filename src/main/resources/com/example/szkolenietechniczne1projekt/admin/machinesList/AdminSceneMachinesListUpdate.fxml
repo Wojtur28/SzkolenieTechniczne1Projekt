@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1015.0" stylesheets="@../../../../../styles/mainStyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.szkolenietechniczne1projekt.controllers.machine.MachineUpdateController">
+    <TableView fx:id="machineTable" layoutX="169.0" layoutY="82.0" prefHeight="400.0" prefWidth="540.0">
+        <columns>
+            <TableColumn prefWidth="31.0" text="id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="112.0" text="name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="128.0" text="condition">
+                <cellValueFactory>
+                    <PropertyValueFactory property="condition" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="111.0" text="quantity">
+                <cellValueFactory>
+                    <PropertyValueFactory property="quantity" />
+                </cellValueFactory>
+            </TableColumn>
+         <TableColumn prefWidth="157.0" text="hall_id">
+                <cellValueFactory>
+                    <PropertyValueFactory property="hallId" />
+                </cellValueFactory>
+         </TableColumn>
+        </columns>
+    </TableView>
+    <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="100.0">
+        <padding>
+            <Insets top="10.0" />
+        </padding>
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneToAdminUsersListRead" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="USER" size="40" />
+            </graphic>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneToAdminGroupsListRead" prefHeight="51.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="40" />
+            </graphic>
+        </Button>
+        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneToAdminHallsListRead" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="40" />
+            </graphic>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminMachinesListRead" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="COGS" size="40" />
+            </graphic>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminTrainersListRead" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="ODNOKLASSNIKI" size="40" />
+            </graphic>
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToLogin" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../../styles/mainStyle.css">
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="POWER_OFF" size="40" />
+            </graphic>
+            <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+        </Button>
+    </VBox>
+    <Label alignment="CENTER" layoutX="169.0" layoutY="14.0" prefHeight="50.0" prefWidth="352.0" text="Maszyny" textAlignment="CENTER" textFill="WHITE">
+        <font>
+            <Font name="Roboto Regular" size="43.0" />
+        </font>
+    </Label>
+    <VBox layoutX="729.0" layoutY="82.0" prefHeight="400.0" prefWidth="240.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Identyfikator" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceMachine" prefHeight="25.0" prefWidth="242.0" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Nazwa maszyny" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Roboto" size="25.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nameMachineField" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Stan" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Roboto" size="25.0" />
+            </font>
+        </Label>
+        <TextField fx:id="conditionField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Ilość" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="quantityField" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="240.0" text="Hala" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceHall" prefHeight="25.0" prefWidth="242.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="250.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Roboto" size="25.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#updateMachine" prefHeight="32.0" prefWidth="246.0" text="Edytuj maszynę" textFill="WHITE">
+         <font>
+            <Font name="Roboto Regular" size="14.0" />
+         </font>
+      </Button>
+    </VBox>
+    <HBox alignment="CENTER" layoutX="569.0" layoutY="25.0" prefHeight="32.0" prefWidth="417.0">
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminMachinesListRead" prefHeight="32.0"
+                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Przeglądaj" textFill="WHITE">
+           <font>
+               <Font name="Roboto Regular" size="12.0"/>
+           </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminMachinesListAdd" prefHeight="32.0"
+                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Dodaj" textFill="WHITE">
+           <font>
+               <Font name="Roboto Regular" size="12.0"/>
+           </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminMachinesListUpdate" prefHeight="32.0"
+                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Edytuj" textFill="WHITE">
+           <font>
+               <Font name="Roboto Regular" size="12.0"/>
+           </font>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#changeSceneToAdminMachinesListDelete" prefHeight="32.0"
+                prefWidth="100.0" stylesheets="@../../../../../styles/mainStyle.css" text="Usuń" textFill="WHITE">
+           <font>
+               <Font name="Roboto Regular" size="12.0"/>
+           </font>
+        </Button>
+    </HBox>
+
+</AnchorPane>

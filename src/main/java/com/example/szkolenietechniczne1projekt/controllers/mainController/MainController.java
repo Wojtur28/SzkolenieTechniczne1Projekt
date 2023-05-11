@@ -35,13 +35,13 @@ public abstract class MainController {
 
     @FXML
     public void changeSceneToLogin(ActionEvent actionEvent) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("firstScene/LoginScene.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setResizable(false);
-            stage.setMaximized(false);
-            stage.setScene(scene);
-            stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("firstScene/LoginScene.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -221,8 +221,8 @@ public abstract class MainController {
     }
 
     @FXML
-    public void changeSceneToAdminMachinesList(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/machinesList/AdminSceneMachinesList.fxml"));
+    public void changeSceneToAdminMachinesListAdd(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/machinesList/AdminSceneMachinesListAdd.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setResizable(false);
@@ -231,4 +231,36 @@ public abstract class MainController {
         stage.show();
     }
 
+    @FXML
+    public void changeSceneToAdminMachinesListRead(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/machinesList/AdminSceneMachinesListRead.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminMachinesListUpdate(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/machinesList/AdminSceneMachinesListUpdate.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void changeSceneToAdminMachinesListDelete(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("admin/machinesList/AdminSceneMachinesListDelete.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setMaximized(false);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
