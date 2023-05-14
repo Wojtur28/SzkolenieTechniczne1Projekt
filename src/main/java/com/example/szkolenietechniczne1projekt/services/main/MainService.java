@@ -2,9 +2,7 @@ package com.example.szkolenietechniczne1projekt.services.main;
 
 import com.example.szkolenietechniczne1projekt.models.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import java.util.List;
 
 public abstract class MainService {
@@ -20,6 +18,24 @@ public abstract class MainService {
 
     public List<User> getAllUsers() {
         return getAllEntities("SELECT u FROM User u", User.class);
+    }
+
+    public User getUserByUsername(String username) {
+        EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
+        User user = null;
+
+        try {
+            Query query = em.createQuery("SELECT u FROM User u WHERE u.username = :username");
+            query.setParameter("username", username);
+            user = (User) query.getSingleResult();
+        } catch (NoResultException ex) {
+            System.out.println("User not found");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return user;
     }
 
     public List<Group> getAllGroups() {
