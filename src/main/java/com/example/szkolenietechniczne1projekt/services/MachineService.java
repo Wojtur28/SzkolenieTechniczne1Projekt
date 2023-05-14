@@ -10,6 +10,7 @@ public class MachineService extends MainService {
 
     private static final EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("unit");
 
+
     public  void addMachine(Machine machine) {
         EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
         em.getTransaction().begin();
@@ -43,5 +44,7 @@ public class MachineService extends MainService {
         em.getTransaction().commit();
         em.close();
     }
+
+
 
 }
