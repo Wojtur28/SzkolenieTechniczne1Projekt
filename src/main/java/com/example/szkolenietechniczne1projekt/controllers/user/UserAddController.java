@@ -5,6 +5,7 @@ import com.example.szkolenietechniczne1projekt.models.*;
 import com.example.szkolenietechniczne1projekt.services.UserService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -49,9 +50,21 @@ public class UserAddController extends MainController implements Initializable{
 
 
     public void addUser() {
+        String username = usernameField.getText();
+        User existingUser = userService.getUserByUsername(username);
+        if(existingUser != null) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Username already exists");
+            alert.setContentText("Please choose a different username");
+            alert.showAndWait();
+            return;
+        }
+
         User user = new User();
 
-        user.setUsername(usernameField.getText());
+        user.setUsername(username);
         user.setPassword(passwordField.getText());
         user.setHallId(choiceHall.getValue().getId());
         user.setGroupId(choiceGroup.getValue().getId());
