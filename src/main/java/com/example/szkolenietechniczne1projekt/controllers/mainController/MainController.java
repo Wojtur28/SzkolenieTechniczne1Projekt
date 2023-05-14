@@ -146,6 +146,27 @@ public abstract class MainController {
         changeScene(actionEvent, "admin/machinesList/AdminSceneMachinesListDelete.fxml");
     }
 
+    @FXML
+    public void changeSceneToUsersListRead(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "user/UserSceneUsersListRead.fxml");
+    }
+    @FXML
+    public void changeSceneToGroupsListRead(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "user/UserSceneGroupsListRead.fxml");
+    }
+    @FXML
+    public void changeSceneToHallsListRead(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "user/UserSceneHallsListRead.fxml");
+    }
+    @FXML
+    public void changeSceneToMachinesListRead(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "user/UserSceneMachinesListRead.fxml");
+    }
+    @FXML
+    public void changeSceneToTrainersListRead(ActionEvent actionEvent) throws IOException {
+        changeScene(actionEvent, "user/UserSceneTrainersListRead.fxml");
+    }
+
     public <T> void setItemsToChoiceBox(ChoiceBox<T> comboBox, List<T> items) {
         ObservableList<T> observableList = FXCollections.observableArrayList(items);
         comboBox.setItems(observableList);

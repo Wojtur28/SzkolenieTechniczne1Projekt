@@ -1,11 +1,13 @@
 package com.example.szkolenietechniczne1projekt.controllers;
 
 import com.example.szkolenietechniczne1projekt.controllers.mainController.MainController;
+import com.example.szkolenietechniczne1projekt.models.Role;
 import com.example.szkolenietechniczne1projekt.models.User;
 import com.example.szkolenietechniczne1projekt.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -30,8 +32,14 @@ public class LoginController extends MainController implements Initializable {
 
         User user = userService.getUserByUsername(username);
 
-        if(user != null && user.getPassword().equals(password)){
+        if(user != null && user.getPassword().equals(password) && user.getRole() == Role.ADMIN){
             changeSceneToAdminUsersListRead(event);
+        } else if(user != null && user.getPassword().equals(password) && user.getRole() == Role.USER){
+            changeSceneToUsersListRead(event);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+
         }
 
 
