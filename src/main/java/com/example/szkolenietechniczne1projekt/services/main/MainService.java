@@ -11,38 +11,30 @@ public abstract class MainService {
 
     private static final EntityManagerFactory ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory("unit");
 
-    public List<User> getAllUsers() {
+    private <T> List<T> getAllEntities(String query, Class<T> entityClass) {
         EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
-        List<User> users = em.createQuery("SELECT u FROM User u", User.class).getResultList();
+        List<T> entities = em.createQuery(query, entityClass).getResultList();
         em.close();
-        return users;
+        return entities;
+    }
+
+    public List<User> getAllUsers() {
+        return getAllEntities("SELECT u FROM User u", User.class);
     }
 
     public List<Group> getAllGroups() {
-        EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
-        List<Group> groups = em.createQuery("SELECT g FROM Group g", Group.class).getResultList();
-        em.close();
-        return groups;
+        return getAllEntities("SELECT g FROM Group g", Group.class);
     }
 
     public List<Trainer> getAllTrainers() {
-        EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
-        List<Trainer> trainers = em.createQuery("SELECT t FROM Trainer t", Trainer.class).getResultList();
-        em.close();
-        return trainers;
+        return getAllEntities("SELECT t FROM Trainer t", Trainer.class);
     }
 
     public List<Machine> getAllMachines() {
-        EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
-        List<Machine> machines = em.createQuery("SELECT m FROM Machine m", Machine.class).getResultList();
-        em.close();
-        return machines;
+        return getAllEntities("SELECT m FROM Machine m", Machine.class);
     }
 
     public List<Hall> getAllHalls() {
-        EntityManager em = ENTITY_MANAGER_FACTORY.createEntityManager();
-        List<Hall> halls = em.createQuery("SELECT h FROM Hall h", Hall.class).getResultList();
-        em.close();
-        return halls;
+        return getAllEntities("SELECT h FROM Hall h", Hall.class);
     }
 }
