@@ -7,7 +7,6 @@ import com.example.szkolenietechniczne1projekt.models.Hall;
 import com.example.szkolenietechniczne1projekt.models.Trainer;
 import com.example.szkolenietechniczne1projekt.services.GroupService;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -15,10 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
-
-import static com.example.szkolenietechniczne1projekt.services.GroupService.setGroupChoiceBoxValue;
 
 public class GroupUpdateController extends MainController implements Initializable {
 
@@ -40,15 +36,13 @@ public class GroupUpdateController extends MainController implements Initializab
     public void initialize(URL url, ResourceBundle resourceBundle) {
         groupService = new GroupService();
 
-        List<Group> groups = groupService.getAllGroups();
-        ObservableList<Group> observableList = FXCollections.observableArrayList(groups);
-        groupTable.setItems(observableList);
+        setItemsToTableView(groupTable, groupService.getAllGroups());
 
-        choiceGroup.setItems(observableList);
         choiceDifficulty.setItems(FXCollections.observableArrayList(Difficulty.values()));
 
-        setGroupChoiceBoxValue(groupService, choiceHall, choiceTrainer);
-
+        setItemsToChoiceBox(choiceHall, groupService.getAllHalls());
+        setItemsToChoiceBox(choiceTrainer, groupService.getAllTrainers());
+        setItemsToChoiceBox(choiceGroup, groupService.getAllGroups());
     }
 
     public void updateGroup() {
@@ -61,9 +55,7 @@ public class GroupUpdateController extends MainController implements Initializab
 
         groupService.updateGroup(selectedGroup);
 
-        List<Group> groups = groupService.getAllGroups();
-        ObservableList<Group> observableList = FXCollections.observableArrayList(groups);
-        groupTable.setItems(observableList);
+        setItemsToTableView(groupTable, groupService.getAllGroups());
     }
 
 

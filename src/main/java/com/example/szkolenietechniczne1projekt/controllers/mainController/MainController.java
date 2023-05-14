@@ -2,14 +2,19 @@ package com.example.szkolenietechniczne1projekt.controllers.mainController;
 
 import com.example.szkolenietechniczne1projekt.HelloApplication;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public abstract class MainController {
 
@@ -140,4 +145,15 @@ public abstract class MainController {
     public void changeSceneToAdminMachinesListDelete(ActionEvent actionEvent) throws IOException {
         changeScene(actionEvent, "admin/machinesList/AdminSceneMachinesListDelete.fxml");
     }
+
+    public <T> void setItemsToChoiceBox(ChoiceBox<T> comboBox, List<T> items) {
+        ObservableList<T> observableList = FXCollections.observableArrayList(items);
+        comboBox.setItems(observableList);
+    }
+
+    public <T> void setItemsToTableView(TableView<T> tableView, List<T> items) {
+        ObservableList<T> observableList = FXCollections.observableArrayList(items);
+        tableView.setItems(observableList);
+    }
+
 }

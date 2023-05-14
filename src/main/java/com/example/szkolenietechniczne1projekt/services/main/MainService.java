@@ -37,4 +37,6 @@ public abstract class MainService {
     public List<Hall> getAllHalls() {
         return getAllEntities("SELECT h FROM Hall h", Hall.class);
     }
+
+
 }

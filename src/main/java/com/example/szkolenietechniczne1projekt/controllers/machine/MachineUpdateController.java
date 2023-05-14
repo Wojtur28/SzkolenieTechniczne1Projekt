@@ -4,7 +4,6 @@ import com.example.szkolenietechniczne1projekt.controllers.mainController.MainCo
 import com.example.szkolenietechniczne1projekt.models.Hall;
 import com.example.szkolenietechniczne1projekt.models.Machine;
 import com.example.szkolenietechniczne1projekt.services.MachineService;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -12,7 +11,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class MachineUpdateController extends MainController implements Initializable {
@@ -35,17 +33,14 @@ public class MachineUpdateController extends MainController implements Initializ
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         machineService = new MachineService();
-        List<Machine> machines = machineService.getAllMachines();
-        ObservableList<Machine> observableList = javafx.collections.FXCollections.observableArrayList(machines);
-        machineTable.setItems(observableList);
 
         choiceCondition.getItems().addAll("Nowy", "Działa", "Zepsuty");
         choiceQuantity.getItems().addAll(1, 2, 3, 4, 5);
-        choiceMachine.setItems(observableList);
 
-        List<Hall> halls = machineService.getAllHalls();
-        ObservableList<Hall> observableListHalls = javafx.collections.FXCollections.observableArrayList(halls);
-        choiceHall.setItems(observableListHalls);
+        setItemsToTableView(machineTable, machineService.getAllMachines());
+
+        setItemsToChoiceBox(choiceMachine, machineService.getAllMachines());
+        setItemsToChoiceBox(choiceHall, machineService.getAllHalls());
     }
 
     public void updateMachine() {
@@ -58,8 +53,6 @@ public class MachineUpdateController extends MainController implements Initializ
 
         machineService.updateMachine(selectedMachine);
 
-        List<Machine> machines = machineService.getAllMachines();
-        ObservableList<Machine> observableList = javafx.collections.FXCollections.observableArrayList(machines);
-        machineTable.setItems(observableList);
+        setItemsToTableView(machineTable, machineService.getAllMachines());
     }
 }
