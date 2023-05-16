@@ -39,6 +39,7 @@ public class GroupUpdateController extends MainController implements Initializab
         setItemsToTableView(groupTable, groupService.getAllGroups());
 
         choiceDifficulty.setItems(FXCollections.observableArrayList(Difficulty.values()));
+        choiceDifficulty.setValue(Difficulty.EASY);
 
         setItemsToChoiceBox(choiceHall, groupService.getAllHalls());
         setItemsToChoiceBox(choiceTrainer, groupService.getAllTrainers());

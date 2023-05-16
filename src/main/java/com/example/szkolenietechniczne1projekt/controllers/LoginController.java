@@ -35,11 +35,12 @@ public class LoginController extends MainController implements Initializable {
         if(user != null && user.getPassword().equals(password) && user.getRole() == Role.ADMIN){
             changeSceneToAdminUsersListRead(event);
         } else if(user != null && user.getPassword().equals(password) && user.getRole() == Role.USER){
-            changeSceneToUsersListRead(event);
+            changeSceneToGroupsListRead(event);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-
+            alert.setHeaderText("Wrong username or password");
+            alert.showAndWait();
         }
 
 

@@ -5,6 +5,7 @@ import com.example.szkolenietechniczne1projekt.models.Hall;
 import com.example.szkolenietechniczne1projekt.services.HallService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,7 +20,7 @@ public class HallAddController extends MainController implements Initializable {
     @FXML
     private TextField hallNameField;
     @FXML
-    private TextField sizeField;
+    private ChoiceBox<Integer> choiceSize;
     @FXML
     private ChoiceBox<Boolean> choiceIsCleaned;
 
@@ -30,18 +31,26 @@ public class HallAddController extends MainController implements Initializable {
         hallService = new HallService();
         setItemsToTableView(hallTable, hallService.getAllHalls());
 
+        choiceSize.getItems().addAll(5, 10, 15, 20, 25, 30);
+        choiceSize.setValue(5);
+
         choiceIsCleaned.getItems().addAll(true, false);
+        choiceIsCleaned.setValue(true);
     }
 
     public void addHall() {
-        String hallName = hallNameField.getText();
-        String size = sizeField.getText();
-        boolean isCleaned = choiceIsCleaned.getValue();
-
         Hall hall = new Hall();
-        hall.setName(hallName);
-        hall.setSize(Integer.parseInt(size));
-        hall.setCleaned(isCleaned);
+        hall.setName(hallNameField.getText());
+        hall.setSize(choiceSize.getValue());
+        hall.setCleaned(choiceIsCleaned.getValue());
+
+        if (isTextFieldEmpty(hallNameField)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Nazwa hali nie może być pusta");
+            alert.showAndWait();
+            return;
+        }
 
         hallService.addHall(hall);
 

@@ -35,6 +35,7 @@ public class GroupAddController extends MainController implements Initializable 
         setItemsToTableView(groupTable, groupService.getAllGroups());
 
         choiceDifficulty.setItems(FXCollections.observableArrayList(Difficulty.values()));
+        choiceDifficulty.setValue(Difficulty.EASY);
 
         setItemsToChoiceBox(choiceHall, groupService.getAllHalls());
         setItemsToChoiceBox(choiceTrainer, groupService.getAllTrainers());

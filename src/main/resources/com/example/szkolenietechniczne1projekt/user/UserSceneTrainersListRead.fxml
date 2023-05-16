@@ -45,14 +45,6 @@
         <padding>
             <Insets top="10.0" />
         </padding>
-        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneToUsersListRead" prefHeight="50.0" prefWidth="56.0" stylesheets="@../../../../styles/mainStyle.css">
-            <VBox.margin>
-                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-            </VBox.margin>
-            <graphic>
-                <FontAwesomeIconView fill="WHITE" glyphName="USER" size="40" />
-            </graphic>
-        </Button>
         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeSceneToGroupsListRead" prefHeight="51.0" prefWidth="56.0" stylesheets="@../../../../styles/mainStyle.css">
             <VBox.margin>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

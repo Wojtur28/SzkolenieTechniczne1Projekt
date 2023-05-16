@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -177,4 +178,17 @@ public abstract class MainController {
         tableView.setItems(observableList);
     }
 
+    protected boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return !email.matches(emailRegex);
+    }
+
+    protected boolean isValidPhoneNumber(String phoneNumber) {
+        String phoneRegex = "\\d{9}";
+        return !phoneNumber.matches(phoneRegex);
+    }
+
+    protected boolean isTextFieldEmpty(TextField textField) {
+        return textField.getText().isEmpty();
+    }
 }

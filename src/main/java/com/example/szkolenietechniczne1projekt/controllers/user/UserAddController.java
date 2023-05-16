@@ -40,6 +40,7 @@ public class UserAddController extends MainController implements Initializable{
 
         choiceRole.getItems().add(Role.USER.toString());
         choiceRole.getItems().add(Role.ADMIN.toString());
+        choiceRole.setValue(Role.USER.toString());
 
         setItemsToChoiceBox(choiceHall, userService.getAllHalls());
         setItemsToChoiceBox(choiceGroup, userService.getAllGroups());
@@ -56,8 +57,7 @@ public class UserAddController extends MainController implements Initializable{
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Username already exists");
-            alert.setContentText("Please choose a different username");
+            alert.setHeaderText("Nazwa użytkownika jest zajęta");
             alert.showAndWait();
             return;
         }

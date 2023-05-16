@@ -5,6 +5,7 @@ import com.example.szkolenietechniczne1projekt.models.Trainer;
 import com.example.szkolenietechniczne1projekt.services.TrainerService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
@@ -40,8 +41,29 @@ public class TrainerAddController extends MainController implements Initializabl
         trainer.setEmail(emailField.getText());
         trainer.setPhoneNumber(phoneNumberField.getText());
 
+
+        if (isTextFieldEmpty(firstNameField) || isTextFieldEmpty(lastNameField)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Pola imię i nazwisko nie mogą być puste!");
+            alert.showAndWait();
+            return;
+        }
+
+        if(isValidEmail(trainer.getEmail()) || isValidPhoneNumber(trainer.getPhoneNumber())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Niepoprawny email lub numer telefonu!");
+            alert.showAndWait();
+            return;
+        }
+
         trainerService.addTrainer(trainer);
 
         setItemsToTableView(trainerTable, trainerService.getAllTrainers());
     }
+
+
 }

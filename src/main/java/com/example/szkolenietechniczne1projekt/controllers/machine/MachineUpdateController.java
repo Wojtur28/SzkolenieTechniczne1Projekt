@@ -6,6 +6,7 @@ import com.example.szkolenietechniczne1projekt.models.Machine;
 import com.example.szkolenietechniczne1projekt.services.MachineService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -35,7 +36,9 @@ public class MachineUpdateController extends MainController implements Initializ
         machineService = new MachineService();
 
         choiceCondition.getItems().addAll("Nowy", "Działa", "Zepsuty");
+        choiceCondition.setValue("Nowy");
         choiceQuantity.getItems().addAll(1, 2, 3, 4, 5);
+        choiceQuantity.setValue(1);
 
         setItemsToTableView(machineTable, machineService.getAllMachines());
 
@@ -50,6 +53,14 @@ public class MachineUpdateController extends MainController implements Initializ
         selectedMachine.setCondition(choiceCondition.getValue());
         selectedMachine.setQuantity(choiceQuantity.getValue());
         selectedMachine.setHallId(choiceHall.getValue().getId());
+
+        if(isTextFieldEmpty(nameMachineField)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd");
+            alert.setHeaderText("Nie podano nazwy maszyny");
+            alert.showAndWait();
+            return;
+        }
 
         machineService.updateMachine(selectedMachine);
 
